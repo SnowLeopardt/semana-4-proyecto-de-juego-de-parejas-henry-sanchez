@@ -59,6 +59,9 @@ namespace semana_4_proyecto_de_juego_de_parejas_henry_sanchez
 
         private void label1_Click(object sender, EventArgs e)
         {
+            if (timer1.Enabled == true)
+                return;
+
             Label clickedLabel = sender as Label;
 
             if (clickedLabel != null)
@@ -71,12 +74,29 @@ namespace semana_4_proyecto_de_juego_de_parejas_henry_sanchez
                 {
                     firstClicked = clickedLabel;
                     firstClicked.ForeColor = Color.Black;
-
                     return;
                 }
-
+               
+                secondClicked = clickedLabel;
                 clickedLabel.ForeColor = Color.Black;
+
+                timer1.Start();
             }
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+            timer1.Stop();
+
+            
+            firstClicked.ForeColor = firstClicked.BackColor;
+            secondClicked.ForeColor = secondClicked.BackColor;
+
+            
+            firstClicked = null;
+            secondClicked = null;
 
         }
     }
