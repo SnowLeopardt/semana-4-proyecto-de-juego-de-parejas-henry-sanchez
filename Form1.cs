@@ -131,7 +131,7 @@ namespace semana_4_proyecto_de_juego_de_parejas_henry_sanchez
             }
 
 
-            MessageBox.Show("You matched all the icons!", "Congratulations");
+            MessageBox.Show("¡Felicidades Has Ganado!");
             Close();
         }
     }
