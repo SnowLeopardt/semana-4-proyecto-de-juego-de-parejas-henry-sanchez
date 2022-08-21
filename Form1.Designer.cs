@@ -95,6 +95,7 @@ namespace semana_4_proyecto_de_juego_de_parejas_henry_sanchez
             this.label1.TabIndex = 0;
             this.label1.Text = "c";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 

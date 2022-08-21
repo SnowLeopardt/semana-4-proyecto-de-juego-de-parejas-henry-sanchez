@@ -34,7 +34,7 @@ namespace semana_4_proyecto_de_juego_de_parejas_henry_sanchez
                 {
                     int randomNumber = random.Next(icons.Count);
                     iconLabel.Text = icons[randomNumber];
-                    
+                    iconLabel.ForeColor = iconLabel.BackColor;
                     icons.RemoveAt(randomNumber);
                 }
             }
@@ -51,6 +51,21 @@ namespace semana_4_proyecto_de_juego_de_parejas_henry_sanchez
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            Label clickedLabel = sender as Label;
+
+            if (clickedLabel != null)
+            {
+                
+                if (clickedLabel.ForeColor == Color.Black)
+                    return;
+
+                clickedLabel.ForeColor = Color.Black;
+            }
 
         }
     }
