@@ -24,9 +24,29 @@ namespace semana_4_proyecto_de_juego_de_parejas_henry_sanchez
 
 
 
+        private void AssignIconsToSquares()
+        {
+            
+            foreach (Control control in tableLayoutPanel1.Controls)
+            {
+                Label iconLabel = control as Label;
+                if (iconLabel != null)
+                {
+                    int randomNumber = random.Next(icons.Count);
+                    iconLabel.Text = icons[randomNumber];
+                    
+                    icons.RemoveAt(randomNumber);
+                }
+            }
+        }
+
+
+
         public Form1()
         {
             InitializeComponent();
+
+            AssignIconsToSquares();
         }
 
         private void Form1_Load(object sender, EventArgs e)
