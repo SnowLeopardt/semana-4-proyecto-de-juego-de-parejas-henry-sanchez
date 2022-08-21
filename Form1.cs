@@ -9,9 +9,12 @@ using System.Windows.Forms;
 namespace semana_4_proyecto_de_juego_de_parejas_henry_sanchez
 {
     public partial class Form1 : Form
-
     {
-        
+        Label firstClicked = null;
+
+       
+        Label secondClicked = null;
+
         Random random = new Random();
 
         
@@ -63,6 +66,14 @@ namespace semana_4_proyecto_de_juego_de_parejas_henry_sanchez
                 
                 if (clickedLabel.ForeColor == Color.Black)
                     return;
+
+                if (firstClicked == null)
+                {
+                    firstClicked = clickedLabel;
+                    firstClicked.ForeColor = Color.Black;
+
+                    return;
+                }
 
                 clickedLabel.ForeColor = Color.Black;
             }
